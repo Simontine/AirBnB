@@ -1,0 +1,62 @@
+<ion-content class="no-scroll">
+  <!-- <ion-button size="small" (click)="toggleInfiniteScroll()" expand="block">
+    Toggle Infinite Scroll
+  </ion-button> -->
+  <div class="main display-flex">
+    <div class="display-flex">
+      <h1>Find your next perfect place</h1>
+      <ion-button shape="round" (click)="doSomething()"> Explore </ion-button>
+    </div>
+  </div>
+
+  <div>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size-md="4" size-sm="12" *ngFor="let place of places">
+          <!-- <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-list>
+                  <ion-img [src]="place.imgUrl"></ion-img>
+                  <ion-label>{{ place.name }}</ion-label>
+                </ion-list>
+              </ion-item>
+            </ion-card-content>
+          </ion-card> -->
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>{{place.name}}</ion-card-subtitle>
+              <ion-card-title>{{place.name}}</ion-card-title>
+              <ion-img [src]="place.imgUrl"></ion-img>
+            </ion-card-header>
+
+            <ion-card-content>
+              Keep close to Nature's heart... and break clear away, once in
+              awhile, and climb a mountain or spend a week in the woods. Wash
+              your spirit clean.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+  
+  <!-- <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <div>1 of 3</div>
+        </ion-col>
+        <ion-col>
+          <div>2 of 3</div>
+        </ion-col>
+        <ion-col>
+          <div>3 of 3</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div> -->
+</ion-content>

@@ -1,0 +1,72 @@
+
+<ion-content>
+  <div class="display-flex" style="background-color: white;">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header>
+              <ion-buttons>
+                <ion-back-button title =""></ion-back-button>
+              </ion-buttons>
+            <ion-card-title>
+              Create a new account
+            </ion-card-title>
+        </ion-card-header>
+          <ion-card-content >
+            <ion-item>
+              <ion-label position="floating">Firstname:</ion-label>
+              <ion-input type ="firstname"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Lastname:</ion-label>
+              <ion-input type ="lastname"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email:</ion-label>
+              <ion-input type ="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Phone number:</ion-label>
+              <ion-input type ="phone number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Home Address:</ion-label>
+              <ion-input type ="address"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password:</ion-label>
+              <ion-input type ="password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Confirm password:</ion-label>
+              <ion-input type ="confirm password"></ion-input>
+            </ion-item>
+            <ion-radio-group>
+              <ion-grid color="primary">
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-item>
+                      <ion-label>Guest</ion-label>
+                      <ion-radio value="Guest"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-item>
+                      <ion-label>Host</ion-label>
+                      <ion-radio value="Host"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-radio-group>
+            <ion-button color="success" size="full">Signup</ion-button>
+            <p>Already have an account <a href="">signin</a></p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>

@@ -1,0 +1,87 @@
+<!-- login page -->
+<ng-container *ngIf="forgetPassword === false">
+  <ion-content>
+    <div class="d-flex" style="background-color: white">
+      <ion-grid>
+        <form [formGroup]="loginForm">
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Login</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Email:</ion-label>
+                    <ion-input type="email" required class ="form-control" formControlName="email"[class.is-invalid]="uEmail.invalid && uEmail.touched"></ion-input>
+
+                    <div *ngIf="uEmail.invalid && uEmail.touched">
+                        <small *ngIf="uEmail.errors?.required" class="text-danger">Email required</small>
+                        <small *ngIf="uEmail.errors?.pattern" class="text-danger">Enter correct email</small>
+                    </div>
+                  </ion-item>
+                  <ion-item>
+
+                    <ion-label position="floating">Password:</ion-label>
+                    <ion-input
+                      type="password" required formControlName="password" class="form-control" [class.is-invalid]= "uPassword.invalid && uPassword.touched"
+                    ></ion-input>
+
+                    <div *ngIf="uPassword.invalid && uPassword.touched">
+                        <small *ngIf ="uPassword.errors?.required" class ="text-danger">Password required</small>
+                        <small *ngIf="uPassword.errors?.minlength" class="text-danger">Password can not be less than 6 characters</small>
+                        <small *ngIf="uPassword.errors?.maxlength" class="text-danger">Password can not be more than 15 characters</small>
+                    </div>
+                  </ion-item>
+                  <ion-button color="dark" fill="clear" size="full"
+                    (click) = "ForgetPassword()">forgetten password</ion-button
+                  >
+                  <ion-button color="success" size="full" [disabled]="!loginForm.valid">Login</ion-button>
+                  <p>Don't have an account <a (click)="signup()">signup</a></p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+      </form>
+      </ion-grid>
+
+    </div>
+  </ion-content>
+</ng-container>
+
+<!-- forgotten pin page -->
+
+<ng-container *ngIf="forgetPassword === true">
+  <ion-content>
+    <div class="display-flex" style="background-color: white">
+      <ion-grid>
+        <form [formGroup]="loginForm">
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Reset Password</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Email:</ion-label>
+                    <ion-input type="email" required class ="form-control" formControlName="email"[class.is-invalid]="uEmail.invalid && uEmail.touched"></ion-input>
+
+                    <div *ngIf="uEmail.invalid && uEmail.touched">
+                        <small *ngIf="uEmail.errors?.required" class="text-danger">Email required</small>
+                        <small *ngIf="uEmail.errors?.pattern" class="text-danger">Enter correct email</small>
+                    </div>
+                  </ion-item>
+                  <ion-button color="success" size="full" >Send</ion-button>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+      </form>
+      </ion-grid>
+
+    </div>
+  </ion-content>
+</ng-container>
